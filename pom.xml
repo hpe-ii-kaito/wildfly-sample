@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>wildfly-junit-sample</artifactId>
+    <artifactId>wildfly-sample</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>WildFly JUnit Sample</name>
+    <name>WildFly Sample</name>
     <description>A Jakarta REST application for WildFly, built with Maven and tested with JUnit.</description>
 
     <properties>
@@ -35,7 +35,7 @@
     </dependencies>
 
     <build>
-        <finalName>wildfly-junit-sample</finalName>
+        <finalName>wildfly-sample</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
