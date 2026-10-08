@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM maven:3.9.9-eclipse-temurin-21 AS build
+FROM registry.access.redhat.com/ubi9/openjdk-21 AS build
 
 WORKDIR /app
 COPY pom.xml .
@@ -8,7 +8,7 @@ RUN mvn --batch-mode --no-transfer-progress clean verify
 
 FROM quay.io/wildfly/wildfly:35.0.1.Final-jdk21
 
-COPY --from=build --chown=jboss:jboss /app/target/wildfly-junit-sample.war /opt/jboss/wildfly/standalone/deployments/wildfly-junit-sample.war
+COPY --from=build --chown=jboss:jboss /app/target/wildfly-sample.war /opt/jboss/wildfly/standalone/deployments/wildfly-sample.war
 
 USER jboss
 EXPOSE 8080
