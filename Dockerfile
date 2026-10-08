@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM registry.access.redhat.com/ubi9/openjdk-21 AS build
+FROM registry.access.redhat.com/ubi9/openjdk-21:1.24-3.1790283195 AS build
 
 WORKDIR /app
 COPY pom.xml .
